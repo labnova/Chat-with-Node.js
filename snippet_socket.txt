@@ -1,0 +1,17 @@
+var SocketServer= require('ws').Server;
+var wss= new SocketServer({ port:8080 });
+
+wss.on('connection', function(ws)) {
+	ws.on('message', function(message) {
+		console.log('ricevuto: %s', message);
+
+
+	});
+
+	ws.send('sei connesso!');
+
+}
+
+---
+
+nicknames.splice(nicknames.indexOf(socket.nickname), 1);
